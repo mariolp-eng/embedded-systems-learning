@@ -36,6 +36,9 @@
 *.x86_64
 *.hex
 
+host/01-gcc-make-cmake/ring_buffer_demo
+host/01-gcc-make-cmake/test_ring_buffer
+
 # Debug files
 *.dSYM/
 *.su
