@@ -8,10 +8,13 @@ The ring buffer stores `int` values in a static array with no dynamic memory, th
 
 ```
 01-gcc-make-cmake/
-├── include/ring_buffer.h       # Public interface
-├── src/ring_buffer.c           # Implementation
-├── src/main.c                  # Usage example
-└── tests/test_ring_buffer.c    # Unit tests (assert-based)
+├── include/
+│   └── ring_buffer.h       # Public interface
+├── src/
+│   ├── main.c              # Usage example
+│   └── ring_buffer.c       # Implementation
+└── tests/
+    └── test_ring_buffer.c  # Unit tests (assert-based)
 ```
 
 ## Building with GCC by hand
@@ -68,10 +71,13 @@ El buffer guarda valores `int` en un array estático, sin memoria dinámica, igu
 
 ```
 01-gcc-make-cmake/
-├── include/ring_buffer.h       # Interfaz pública
-├── src/ring_buffer.c           # Implementación
-├── src/main.c                  # Ejemplo de uso
-└── tests/test_ring_buffer.c    # Tests unitarios (con assert)
+├── include/
+│   └── ring_buffer.h       # Interfaz pública
+├── src/
+│   ├── main.c              # Ejemplo de uso
+│   └── ring_buffer.c       # Implementación
+└── tests/
+    └── test_ring_buffer.c  # Tests unitarios (con assert)
 ```
 
 ## Compilación con GCC a mano
