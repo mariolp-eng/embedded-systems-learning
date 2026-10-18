@@ -48,6 +48,22 @@ gcc -std=c11 -Iinclude -E src/ring_buffer.c -o ring_buffer.i   # preprocessed co
 gcc -std=c11 -Iinclude -S src/ring_buffer.c -o ring_buffer.s   # generated assembly
 ```
 
+## Building with Make
+
+The `Makefile` automates the same steps and only recompiles the files that have changed:
+
+```bash
+make          # build the demo and the test executables
+make test     # build (if needed) and run the tests
+make clean    # remove object files and executables
+```
+
+The compiler can be changed without editing the `Makefile`:
+
+```bash
+make CC=clang
+```
+
 ## Tests
 
 The tests use only the public interface of the module (black-box testing) and cover:
@@ -109,6 +125,21 @@ Para ver las etapas intermedias de la compilación:
 ```bash
 gcc -std=c11 -Iinclude -E src/ring_buffer.c -o ring_buffer.i   # código preprocesado
 gcc -std=c11 -Iinclude -S src/ring_buffer.c -o ring_buffer.s   # ensamblador generado
+```
+## Compilación con Make
+
+El `Makefile` automatiza los mismos pasos y solo recompila los archivos que han cambiado:
+
+```bash
+make          # compila la demo y el ejecutable de los tests
+make test     # compila (si hace falta) y ejecuta los tests
+make clean    # borra los archivos objeto y los ejecutables
+```
+
+El compilador se puede cambiar sin modificar el `Makefile`:
+
+```bash
+make CC=clang
 ```
 
 ## Tests

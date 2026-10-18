@@ -25,3 +25,4 @@ bool rb_is_full(const ring_buffer *b);
 void rb_display(const ring_buffer *b);
 
 #endif
+
