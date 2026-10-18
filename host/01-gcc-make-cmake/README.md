@@ -8,6 +8,8 @@ The ring buffer stores `int` values in a static array with no dynamic memory, th
 
 ```
 01-gcc-make-cmake/
+├── CMakeLists.txt
+├── Makefile
 ├── include/
 │   └── ring_buffer.h       # Public interface
 ├── src/
@@ -64,6 +66,18 @@ The compiler can be changed without editing the `Makefile`:
 make CC=clang
 ```
 
+## Building with CMake
+
+`CMakeLists.txt` describes the project as three targets: a static library with the ring buffer (`ring_buffer`) and two executables linked against it (`ring_buffer_demo` and `test_ring_buffer`). CMake generates the build system in a separate `build/` directory, so the source tree stays clean:
+
+```bash
+cmake -B build              # configure: generate the build system in build/
+cmake --build build         # compile
+ctest --test-dir build      # run the tests
+```
+
+To start from scratch, delete the `build/` directory.
+
 ## Tests
 
 The tests use only the public interface of the module (black-box testing) and cover:
@@ -87,6 +101,8 @@ El buffer guarda valores `int` en un array estático, sin memoria dinámica, igu
 
 ```
 01-gcc-make-cmake/
+├── CMakeLists.txt
+├── Makefile
 ├── include/
 │   └── ring_buffer.h       # Interfaz pública
 ├── src/
@@ -141,6 +157,18 @@ El compilador se puede cambiar sin modificar el `Makefile`:
 ```bash
 make CC=clang
 ```
+
+## Compilación con CMake
+
+`CMakeLists.txt` describe el proyecto como tres targets: una librería estática con el buffer circular (`ring_buffer`) y dos ejecutables enlazados con ella (`ring_buffer_demo` y `test_ring_buffer`). CMake genera el sistema de compilación en una carpeta aparte, `build/`, así que el código fuente queda limpio:
+
+```bash
+cmake -B build              # configurar: genera el sistema de compilación en build/
+cmake --build build         # compilar
+ctest --test-dir build      # ejecutar los tests
+```
+
+Para empezar de cero, basta con borrar la carpeta `build/`.
 
 ## Tests
 
